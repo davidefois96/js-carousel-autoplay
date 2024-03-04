@@ -2,6 +2,34 @@ const imgWrapper = document.querySelector('.imgWrapper');
 const slider = document.querySelector('.slider');
 const up= document.querySelector('.up');
 const down= document.querySelector('.down');
+
+
+const scrollDown = () =>{
+
+  interScroll = setInterval(() => {
+
+
+    imgCollection[contImg].classList.add('d-none');
+  
+    
+    if(contImg===images.length-1){
+      
+      contImg=0;
+   
+    } else {
+  
+      contImg++;
+  
+    }
+
+    imgCollection[contImg].classList.remove('d-none');
+
+
+    
+  }, 3000);
+
+
+}
 let contImg= 0;
 
 const images = [
@@ -24,30 +52,21 @@ const imgCollection= document.getElementsByClassName('img');
 imgCollection[contImg].classList.remove('d-none');
 
 
-//slider.addEventListener('mouseout',function(){
-
-  setInterval(() => {
+scrollDown();
 
 
-    imgCollection[contImg].classList.add('d-none');
-  
-    
-    if(contImg===images.length-1){
-      
-      contImg=0;
-   
-    } else {
-  
-      contImg++;
-  
-    }
 
-    imgCollection[contImg].classList.remove('d-none');
-    
-  }, 3000);
+imgWrapper.addEventListener('mouseover',function(){
 
+ clearInterval(interScroll);
 
-//})
+})
+
+imgWrapper.addEventListener('mouseout',function(){
+
+  scrollDown();
+ 
+})
 
 
 up.addEventListener('click', function() {
