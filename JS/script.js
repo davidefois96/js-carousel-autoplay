@@ -61,6 +61,18 @@ imgWrapper.addEventListener('mouseover',function(){
  clearInterval(interScroll);
 
 })
+up.addEventListener('mouseover',function(){
+
+ clearInterval(interScroll);
+
+})
+down.addEventListener('mouseover',function(){
+
+ clearInterval(interScroll);
+
+})
+
+
 
 imgWrapper.addEventListener('mouseout',function(){
 
@@ -91,7 +103,6 @@ up.addEventListener('click', function() {
 
 })
 down.addEventListener('click', function() {
-
 
   imgCollection[contImg].classList.add('d-none');
 
